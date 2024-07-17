@@ -1,4 +1,4 @@
-defmodule ConcurrencyPlayground do
+defmodule ConcurrencyPlay do
   @behaviour Runnable
   def run do
     pid = spawn(__MODULE__, :squareConcurrency, [])
