@@ -5,7 +5,7 @@ end
 defmodule Main do
   @behaviour Runnable
   def run do
-    PegarUltimo.Concurrency.run()
+    :ok
   end
 end
 

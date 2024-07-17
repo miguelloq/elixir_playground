@@ -24,11 +24,11 @@ defmodule PegarUltimo do
     pegar2(list, [])
   end
 
-  def pegar2([head | []], list) when is_list(list) do
+  defp pegar2([head | []], list) when is_list(list) do
     {head, Enum.reverse(list)}
   end
 
-  def pegar2([head | tail], list) when is_list(list) do
+  defp pegar2([head | tail], list) when is_list(list) do
     pegar2(tail, [head | list])
   end
 end

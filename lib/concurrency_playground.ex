@@ -11,7 +11,6 @@ defmodule ConcurrencyPlayground do
 
   def squareConcurrency do
     square = &(&1 * &2)
-
     receive do
       {:ok, sender, {num1, num2}} -> send(sender, {:ok, square.(num1, num2)})
     end
