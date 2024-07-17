@@ -32,6 +32,13 @@ defmodule PeppiPlay do
     """
     def elem_exist([], _), do: false
     def elem_exist([head | _], elem) when head == elem, do: true
-    def elem_exist([_, tail], elem), do: elem_exist(tail, elem)
+    def elem_exist([_ | tail], elem), do: elem_exist(tail, elem)
+
+    @doc """
+    Is a list sorted or not
+    """
+    def sorted([]), do: true
+    def sorted([head | [secondHead | _]]) when head > secondHead, do: false
+    def sorted([_|tail]), do: sorted(tail)
   end
 end
