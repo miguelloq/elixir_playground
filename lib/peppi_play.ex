@@ -39,6 +39,18 @@ defmodule PeppiPlay do
     """
     def sorted([]), do: true
     def sorted([head | [secondHead | _]]) when head > secondHead, do: false
-    def sorted([_|tail]), do: sorted(tail)
+    def sorted([_ | tail]), do: sorted(tail)
+
+    def fib(n) when n in [0, 1, 2], do: 1
+    def fib(n), do: fib(n - 1) + fib(n - 2)
+  end
+
+  def sum_without_high_low_numbers(list) do
+    list
+    |> Enum.sort()
+    |> Enum.take(1)
+    |> Enum.reverse()
+    |> Enum.take(1)
+    |> Enum.reduce(0, fn val, acc -> acc + val end)
   end
 end
